@@ -1,19 +1,51 @@
 .refrigerator {
-  max-width:400px;
-  height:calc(100vh - 150px);
+  width: 400px;
+  height:600px;
+  left: 50%;
+  transform: translateX(-50%);
   background:#f2f2f2;
   border-radius:10px;
-  border:3px solid rgb(167, 167, 167);
+  position: absolute;
+  /* border:3px solid rgb(167, 167, 167); */
   margin: 0 auto;
   background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
-  display:flex;
+  /* display:flex;
   align-items:center;
+  justify-content: flex-end; */
+  position:absolute;
+  transition: all 300ms ease;
+}
+
+.refrigerator.open {
+  left:calc(50% - 200px);
+}
+
+.refrigerator.open .backDoor {
+  -webkit-transform: perspective(1200px) rotateY(180deg);
+  transform: perspective(1200px) rotateY(180deg);
 }
 
 .handle {
   height:100px;
-  width:10px;
-  background:#3d3d3d;
-  margin-left:30px;
+  width:8px;
+  background:#686868;
+  margin-right:30px;
   border-radius:10px;
+}
+
+.backDoor {
+  cursor:pointer;
+  transition: all 300ms ease;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  padding:30px;
+  border-radius:10px;
+  background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
+  -webkit-transform: perspective(1200px) rotateY(0deg);
+  transform: perspective(1200px) rotateY(0deg);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
 }
