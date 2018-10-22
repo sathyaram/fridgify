@@ -1,0 +1,11 @@
+## User Stories
+- User enters website
+- User sees visual refridgerator open
+- User is able to see layout of fridge
+- User sees top menu bar with name, Item create button
+- User creates Item for fridge - Name, Exp. Date fields are filled
+- User sees homepage populate with Item immediately
+- User is able to browse sections of fridge
+- When User hovers over section, a popup/model appears which shows a list of the Items in that part of fridge
+- User is able to update Name/Exp. Date of Item
+- User is able to delete an Item
