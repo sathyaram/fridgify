@@ -8,7 +8,7 @@ class App extends Component {
       <div>
       <header>
         <h1>Fridgify</h1>
-        <button>+</button>
+        {/* <button>+</button> */}
       </header>
       <Refrigerator />
       </div>

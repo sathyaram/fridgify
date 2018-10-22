@@ -13,10 +13,24 @@ class Refrigerator extends Component {
       <main>
         <div onClick={this.openDoor} className="refrigerator">
           <div className="backDoor">
-            Testio!
+            <div className="doorText">
+              <ul>
+                <li>Meats</li>
+                <li>Dairy</li>
+                <li>Fruit</li>
+                <li>Vegetables</li>
+                <li>Freezer</li>
+                <li>Drinks</li>
+                <li>Snacks</li>
+                <li>Condiments</li>
+                <li>Grain</li>
+                <li>Miscellaneous</li>
+              </ul>
+            </div>
             <div className="handle"></div>
+          </div>  
+          <div className="shelves">
           </div>
-          
         </div>
       </main>
     );
