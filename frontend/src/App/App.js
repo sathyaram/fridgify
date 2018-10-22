@@ -7,10 +7,19 @@ class App extends Component {
     return (
       <div>
       <header>
-        <h1>Fridgify</h1>
-        {/* <button>+</button> */}
+      <h1><a href="/">Fridgify</a></h1>
+        <div className="tooltip-menu">
+          <div id="info" className="tooltip">
+            <i class="far fa-lightbulb"></i>
+          </div>
+          <div id="additem" className="tooltip">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
       </header>
       <Refrigerator />
+      
+      
       </div>
     );
   }
