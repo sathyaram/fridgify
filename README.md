@@ -11,6 +11,7 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 - See groupings of what is where in your fridge
 - All content that is created/saved shows up immediately, without page refresh
 - Application is responsive and usable on mobile
+- 
 
 ### Schemas
 
@@ -21,7 +22,6 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
   - Freezer or Fridge?
   - [Category]
   
-
 - Category
   - Name
   - [Item]
