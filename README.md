@@ -1,10 +1,10 @@
 # Fridgify
 
-Welcome to Fridgify, an online refridgerator where you can inventory what's in your actual fridge.
+Welcome to Fridgify, an online refrigerator where you can inventory what's in your actual fridge.
 
 ## Overview
 
-This is Fridgify, your one stop spot for what's in your fridge. Have you ever been at a party and wanted to know if you had Kraft singles in your fridge to make grilled cheese when you get home? Well now you will! With Fridgify, you'll have a visual fridge interface to add the name and expiration date of anything in your fridge, and categorize them by food group and location within your fridge or freezer. You'll never forget when you left that slice of ham again! 
+This is Fridgify, your one stop spot for what's in your fridge. Have you ever been at a party and wanted to know if you had Kraft singles in your fridge to make grilled cheese when you get home? Well now you will! With Fridgify, you'll have a visual fridge interface to add the name and expiration date of anything in your fridge, and categorize them by food group and location within your fridge or freezer. You'll never forget where you left that slice of ham again! 
 
 ### Features
 - Create, update, or delete Items with Name, Exp. Date, Categories and Fridge location
@@ -16,9 +16,11 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 
 - Item
   - Name
+  - Quantity
   - Exp. Date
-  - Category
-  - Fridge Location
+  - Freezer or Fridge?
+  - [Category]
+  
 
 - Category
   - Name
@@ -35,3 +37,15 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 - Bodyparser
 - Node
 - Axios
+
+### Food Categories
+- Meats
+- Dairy
+- Fruit
+- Vegetables
+- Freezer
+- Drinks
+- Snacks
+- Condiments/Canned
+- Grains
+- Miscellaneous
