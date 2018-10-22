@@ -8,7 +8,10 @@ main {
   left: 50%;
   transform: translateX(-50%);
   background:#f2f2f2;
-  border-radius:10px;
+  border-top-left-radius:20% 5%;
+  border-top-right-radius:20% 5%;
+  border-bottom-left-radius:20% 4%;
+  border-bottom-right-radius:20% 4%;
   position: absolute;
   /* border:8px solid rgb(167, 167, 167);  */
   margin: 0 auto;
@@ -37,6 +40,10 @@ main {
   width:100%;
   height:100%;
   background:#f2f2f2;
+  border-top-left-radius:20% 5%;
+  border-top-right-radius:20% 5%;
+  border-bottom-left-radius:10% 4%;
+  border-bottom-right-radius:10% 4%;
 }
 
 .refrigerator.open .doorText {
@@ -74,10 +81,13 @@ main {
   position:absolute;
   top:0;
   left:0;
-  border:8px solid rgb(167, 167, 167); 
+  /* border:8px solid rgb(167, 167, 167);  */
   width:100%;
   height:100%;
-  border-radius:10px;
+  border-top-left-radius:20% 5%;
+  border-top-right-radius:20% 5%;
+  border-bottom-left-radius:10% 4%;
+  border-bottom-right-radius:10% 4%;
   display:flex;
   align-items:center;
   background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
@@ -86,4 +96,16 @@ main {
   transform: perspective(1200px) rotateY(0deg);
   -webkit-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
+}
+
+.backDoor:before {
+  content:"";
+  height:100px;
+  width:12px;
+  background:#686868;
+  border-radius:10px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  left:30px;
 }

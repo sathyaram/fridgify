@@ -27,7 +27,7 @@ class Refrigerator extends Component {
                 <li>Miscellaneous</li>
               </ul>
             </div>
-            <div className="handle"></div>
+            {/* <div className="handle"></div> */}
           </div>  
           <div className="shelves">
           </div>
