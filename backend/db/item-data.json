@@ -1,0 +1,37 @@
+[
+  {
+    "name": "beer",
+    "expiration": "Oct 10, 2019",
+    "quantity": 6,
+    "freezer": false,
+    "category": ""
+  },
+  {
+    "name": "beef",
+    "expiration": "Oct 30, 2018",
+    "quantity": 1,
+    "freezer": true,
+    "category": ""
+  },
+  {    
+    "name": "carrot",
+    "expiration": "Nov 17, 2018",
+    "quantity": 5,
+    "freezer": false,
+    "category": ""
+  },
+  {
+    "name": "ice cream",
+    "expiration": "Dec 3, 2018",
+    "quantity": 1,
+    "freezer": true,
+    "category": ""
+  },
+  {
+    "name": "cheese",
+    "expiration": "Nov 16, 2018",
+    "quantity": 1,
+    "freezer": false,
+    "category": ""
+  }
+]
