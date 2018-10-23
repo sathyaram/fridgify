@@ -14,22 +14,25 @@ class Refrigerator extends Component {
         <div onClick={this.openDoor} className="refrigerator">
         <div className="shelves">
           <ul>
-            <li>Meats</li>
-            <li>Dairy</li>
-            <li>Fruit</li>
-            <li>Vegetables</li>
-            <li>Freezer</li>
+            <li><i class="fas fa-feather"></i>Meats</li>
+            <li><i class="fas fa-cloud-moon"></i>Dairy</li>
+            <li><i class="fas fa-apple-alt"></i>Fruit</li>
+            <li><i class="fas fa-gem"></i>Vegetables</li>
+            <li><i class="far fa-snowflake"></i>Freezer</li>
             <li><i class="fas fa-cocktail"></i>Drinks</li>
             <li><i class="fas fa-cookie-bite"></i>Snacks</li>
-            <li>Condiments</li>
-            <li>Grain</li>
-            <li>Other</li>
+            <li><i class="fas fa-wine-bottle"></i>Condiments</li>
+            <li><i class="fas fa-birthday-cake"></i>Grain</li>
+            <li><i class="far fa-sun"></i>Other</li>
           </ul>
         </div>
           <div className="backDoor">
             <div className="seperator"></div>
             <div className="doorText">
-              <h3><i class="fas fa-cocktail"></i>Drinks</h3>
+              <div className="upperDoor">
+                <h3><i class="fas fa-cocktail"></i>Drinks</h3>
+                <a className="edit-list" href="#">Edit List</a>
+              </div>
               <ul>
                 <li>Yellowtail Red Wine [2]</li>
                 <li>Smirnoff Vodka</li>
