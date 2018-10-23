@@ -1,5 +1,5 @@
 const mongooseItem = require('./models/Item')
-const mongooseCategory = require('./models/Item')
+const mongooseCategory = require('./models/Category')
 const Item = mongooseItem.model('Item')
 const Category = mongooseCategory.model('Category')
 const itemData = require('./item-data.json')
@@ -15,8 +15,8 @@ Item.remove({}).then(() => {
 })
 
 Category.remove({}).then(() => {
-  Category.collection.insert(categoryData).then((categorys) => {
-    console.log(categorys)
+  Category.collection.insert(categoryData).then((categories) => {
+    console.log(categories)
     process.exit()
   })
 }).catch((err) => {
