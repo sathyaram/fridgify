@@ -23,20 +23,20 @@ class Refrigerator extends Component {
             <li><i class="fas fa-cookie-bite"></i>Snacks</li>
             <li>Condiments</li>
             <li>Grain</li>
-            <li>Miscellaneous</li>
+            <li>Other</li>
           </ul>
         </div>
           <div className="backDoor">
             <div className="seperator"></div>
             <div className="doorText">
-              <h3>Drinks</h3>
+              <h3><i class="fas fa-cocktail"></i>Drinks</h3>
               <ul>
-                <li>Ugly</li>
-                <li>UglyUgly</li>
-                <li>Ugly</li>
-                <li>UglyUgly</li>
-                <li>Ugly</li>
-                <li>UglyUgly</li>
+                <li>Yellowtail Red Wine [2]</li>
+                <li>Smirnoff Vodka</li>
+                <li>Milk</li>
+                <li>Orange Juice</li>
+                <li>Shocktop Lager</li>
+                <li>Almond Milk [1/2]</li>
               </ul>
             </div>
             {/* <div className="handle"></div> */}
