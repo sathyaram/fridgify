@@ -1,33 +1,43 @@
 [
   {
-    "name": "Meats"
+    "name": "Meats",
+    "class": "meats"
   },
   {
-    "name": "Dairy"
+    "name": "Dairy",
+    "class": "dairy"
   },
   {
-    "name": "Fruit"
+    "name": "Fruit",
+    "class": "fruit"
   },
   {
-    "name": "Vegetables"
+    "name": "Vegetables",
+    "class": "vegetables"
   },
   {
-    "name": "Freezer"
+    "name": "Freezer",
+    "class": "freezer"
   },
   {
-    "name": "Drinks"
+    "name": "Drinks",
+    "class": "drinks"
   },
   {
-    "name": "Snacks"
+    "name": "Snacks",
+    "class": "snacks"
   },
   {
-    "name": "Condiments/Canned"
+    "name": "Condiments",
+    "class": "condiments"
   },
   {
-    "name": "Grains"
+    "name": "Grains",
+    "class": "grains"
   },
   {
-    "name": "Miscellaneous"
+    "name": "Other",
+    "class": "other"
   }
 ]
 
