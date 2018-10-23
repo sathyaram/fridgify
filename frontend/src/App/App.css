@@ -22,3 +22,56 @@ header {
 .tooltip-menu {
   display:flex;
 }
+
+aside {
+  height:100vh;
+  width:300px;
+  position:absolute;
+  top:0;
+  right:0;
+  padding:30px;
+  background:white;
+  box-shadow:-2px 0 15px 0 rgba(0,0,0,0.1);
+}
+
+aside input[type="text"] {
+  display: block;
+  padding:10px;
+  width:100%;
+  border:none;
+  box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
+  font-family: 'Nunito';
+}
+
+aside input:not(:first-child) {
+  margin-top:10px;
+}
+
+aside .two-inputs input {
+  display:inline-block;
+  width:50%;
+}
+
+aside select {
+  margin-top:10px;
+  width:100%;
+  height:35px;
+  background:#fff;
+  border:none;
+  font-family: 'Nunito';
+  box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
+}
+
+aside .checkboxes {
+  margin-top:10px;
+}
+
+aside button {
+  margin-top:10px;
+  padding:10px 20px;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+  font-family: 'Nunito';
+  box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
+}
