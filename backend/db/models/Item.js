@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+// create category Schema
+const Category = new Schema({
+  name: String
+})
+
 // create items Schema & model
 const Item = new Schema({
   name: {
@@ -16,9 +21,6 @@ const Item = new Schema({
     type: Boolean,
     default: false
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category'
-  }
+  category: Category
 })
 module.exports = mongoose.model('Item', Item)
