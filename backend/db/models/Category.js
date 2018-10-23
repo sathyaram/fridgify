@@ -3,11 +3,7 @@ const Schema = mongoose.Schema
 
 const Category = new Schema({
   _id: Number,
-  name: String,
-  // items: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'Item'
-  // }
+  name: String
 })
 
 module.exports = mongoose.model('Category', Category)
