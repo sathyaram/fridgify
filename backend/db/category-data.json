@@ -1,0 +1,43 @@
+[
+  {
+    "_id": 1,
+    "name": "Meats"
+  },
+  {
+    "_id": 2,
+    "name": "Dairy"
+  },
+  {
+    "_id": 3,
+    "name": "Fruit"
+  },
+  {
+    "_id": 4,
+    "name": "Vegetables"
+  },
+  {
+    "_id": 5,
+    "name": "Freezer"
+  },
+  {
+    "_id": 6,
+    "name": "Drinks"
+  },
+  {
+    "_id": 7,
+    "name": "Snacks"
+  },
+  {
+    "_id": 8,
+    "name": "Condiments/Canned"
+  },
+  {
+    "_id": 9,
+    "name": "Grains"
+  },
+  {
+    "_id": 10,
+    "name": "Miscellaneous"
+  }
+]
+
