@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Item = require('../db/models/Item')
+const Item = require('../models/Item')
 
 // get a list of items from the db
 router.get('/items', (req, res) => {
