@@ -18,7 +18,11 @@ router.post('/items', (req, res, next) => {
 
 // update the item in the db
 router.put('/items/:id', (req, res, next) => {
-  res.send({type: 'PUT'})
+  Item.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
+    Item.findOne({_id: req.params.id}).then(item => {
+      res.send(item)
+    })
+  })
 })
 
 // delete an item from db
