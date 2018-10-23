@@ -9,33 +9,34 @@ main {
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
   transform: translateX(-50%);
   background:#f2f2f2;
-  /* border-top-left-radius:20% 5%;
-  border-top-right-radius:20% 5%;
-  border-bottom-left-radius:20% 4%;
-  border-bottom-right-radius:20% 4%; */
   border-radius:25px;
   position: absolute;
   /* border:8px solid rgb(167, 167, 167);  */
   margin: 0 auto;
-  background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
-  /* display:flex;
-  align-items:center;
-  justify-content: flex-end; */
   position:absolute;
   transition: all 600ms ease;
 }
 
 .refrigerator.open {
-  left:calc(50% - 200px);
+  left:calc(50% + 200px);
 }
 
 .refrigerator.open .backDoor {
-  -webkit-transform: perspective(1200px) rotateY(180deg);
-  transform: perspective(1200px) rotateY(180deg);
+  -webkit-transform: perspective(1200px) rotateY(-170deg);
+  transform: perspective(1200px) rotateY(-170deg);
 }
 
 .shelves {
-  padding:30px;
+  transition: all 600ms ease;
+  position:absolute;
+  top:0;
+  left:0;
+  border:6px solid #494949; 
+  width:100%;
+  height:100%;
+  padding:20px;
+  border-radius:25px;
+  background: #f6f6f6;
 }
 
 .doorText {
@@ -46,10 +47,6 @@ main {
   width:100%;
   height:100%;
   background:#f2f2f2;
-  /* border-top-left-radius:20% 5%;
-  border-top-right-radius:20% 5%;
-  border-bottom-left-radius:10% 4%;
-  border-bottom-right-radius:10% 4%; */
   border-radius:25px;
 }
 
@@ -57,18 +54,58 @@ main {
   opacity:1;
 }
 
-.doorText ul {
+.shelves ul {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-direction:row;
+  flex-wrap:wrap;
+  background: #ececec;
+  padding-bottom:67px;
+  border:16px solid #e4e4e4;
+  border-radius:12px;
+  height:100%;
 }
 
-.doorText ul li {
-  width:50%;
-  padding:20px;
-  height: 100px;
+.shelves ul li {
+  padding:15px 20px;
+  font-size:24px;
   text-align:center;
+  position:relative;
+  z-index:2;
+  font-weight:600;
+  width:50%;
+  padding:25px 12px 15px;
 }
+
+.shelves ul li:before {
+  content:"";
+  position: absolute;
+  z-index:-1;
+  width: calc(100% + 8px);
+  bottom:15px;
+  left:-10px;
+  border-bottom: 7px solid #dadada;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.shelves ul li:after {
+  background: #c5c5c5;
+  content: "";
+  width: calc(100% + 20px);
+  height: 6px;
+  position: absolute;
+  left: -10px;
+  z-index:-1;
+  bottom: 9px;
+}
+
+.shelves ul li i {
+  display:block;
+  color:gray;
+  padding-bottom:5px;
+}
+
 
 .handle {
   height:100px;
@@ -87,46 +124,83 @@ main {
   transition: all 600ms ease;
   position:absolute;
   top:0;
-  left:0;
-  /* border:8px solid rgb(167, 167, 167);  */
+  left:2px;
+  z-index:4;
+  border:6px solid #494949; 
   width:100%;
   height:100%;
-  /* border-top-left-radius:20% 5%;
-  border-top-right-radius:20% 5%;
-  border-bottom-left-radius:10% 4%;
-  border-bottom-right-radius:10% 4%; */
   border-radius:25px;
-  display:flex;
-  align-items:center;
-  background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
-    background-image: linear-gradient(to right, #959597 0%, #dfdfe1 35%, #959597 65%, #d2d1d3 100%);
-  -webkit-transform: perspective(1200px) rotateY(0deg);
+  background: #f6f6f6;
+ -webkit-transform: perspective(1200px) rotateY(0deg);
   transform: perspective(1200px) rotateY(0deg);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+}
+
+.backDoor:after {
+  content:"";
+  height:70px;
+  width:12px;
+  background:#494949;
+  border-radius:10px;
+  position:absolute;
+  top:70px;
+  transform:translateY(-50%);
+  right:40px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  z-index:-1;
 }
 
 .backDoor:before {
   content:"";
-  height:100px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  height:150px;
   width:12px;
-  background:#686868;
+  background:#494949;
   border-radius:10px;
   position:absolute;
-  top:50%;
+  top:250px;
   transform:translateY(-50%);
-  left:30px;
+  right:40px;
 }
 
-h2 {
+.seperator {
+  width:100%;
+  position:absolute;
+  height:6px;
+  top:130px;
+  left:0;
+  z-index:12;
+  background:#494949;
+}
+
+.upperDoor {
+  padding-bottom:40px;
+}
+
+.upperDoor h3 {
   font-weight:bold;
   font-size:30px;
 }
 
-.shelves ul {
-  padding:10px 0;
+.upperDoor .edit-list {
+  display:inline-block;
+  margin-top:15px;
+  background:#fff;
+  color:black;
+  padding:10px 15px;
 }
 
-.shelves ul li {
-  padding:5px 0;
+
+.backDoor ul {
+  padding:10px 0;
+  max-height: 400px;
+  overflow: scroll;
+  list-style:initial;
+  padding-left:30px;
+}
+
+.backDoor ul li {
+  padding:10px 0;
+  font-size:20px;
 }
