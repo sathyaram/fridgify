@@ -17,7 +17,8 @@ class App extends Component {
           </div>
         </div>
       </header>
-      <aside>
+
+      {/* <aside>
         <input type="text" name="name" placeholder="Name"/>
         <div class="two-inputs">
           <input type="text" name="quantity" placeholder="Quantity"/>
@@ -36,7 +37,7 @@ class App extends Component {
           <label for="fridge">Fridge</label>
         </div>
         <button type="submit">Submit</button>
-      </aside>
+      </aside> */}
       <Refrigerator />
       
       

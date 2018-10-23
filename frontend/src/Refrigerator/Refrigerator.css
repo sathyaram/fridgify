@@ -26,16 +26,25 @@ main {
 }
 
 .refrigerator.open {
-  left:calc(50% - 200px);
+  left:calc(50% + 200px);
 }
 
 .refrigerator.open .backDoor {
-  -webkit-transform: perspective(1200px) rotateY(180deg);
-  transform: perspective(1200px) rotateY(180deg);
+  -webkit-transform: perspective(1200px) rotateY(-170deg);
+  transform: perspective(1200px) rotateY(-170deg);
 }
 
 .shelves {
+  transition: all 600ms ease;
+  position:absolute;
+  top:0;
+  left:0;
+  border:6px solid #494949; 
+  width:100%;
+  height:100%;
   padding:30px;
+  border-radius:25px;
+  background: #f6f6f6;
 }
 
 .doorText {
@@ -57,13 +66,13 @@ main {
   opacity:1;
 }
 
-.doorText ul {
+.shelves ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  background: gainsboro;
 }
 
-.doorText ul li {
+.shelves ul li {
   width:50%;
   padding:20px;
   height: 100px;
@@ -88,7 +97,7 @@ main {
   position:absolute;
   top:0;
   left:0;
-  /* border:8px solid rgb(167, 167, 167);  */
+  border:6px solid #494949; 
   width:100%;
   height:100%;
   /* border-top-left-radius:20% 5%;
@@ -96,37 +105,62 @@ main {
   border-bottom-left-radius:10% 4%;
   border-bottom-right-radius:10% 4%; */
   border-radius:25px;
-  display:flex;
-  align-items:center;
-  background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); 
-    background-image: linear-gradient(to right, #959597 0%, #dfdfe1 35%, #959597 65%, #d2d1d3 100%);
-  -webkit-transform: perspective(1200px) rotateY(0deg);
+  background: #f6f6f6;
+ -webkit-transform: perspective(1200px) rotateY(0deg);
   transform: perspective(1200px) rotateY(0deg);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+}
+
+.backDoor:after {
+  content:"";
+  height:70px;
+  width:12px;
+  background:#494949;
+  border-radius:10px;
+  position:absolute;
+  top:70px;
+  transform:translateY(-50%);
+  right:40px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  z-index:-1;
 }
 
 .backDoor:before {
   content:"";
-  height:100px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  height:150px;
   width:12px;
-  background:#686868;
+  background:#494949;
   border-radius:10px;
   position:absolute;
-  top:50%;
+  top:250px;
   transform:translateY(-50%);
-  left:30px;
+  right:40px;
 }
 
-h2 {
+.seperator {
+  width:100%;
+  position:absolute;
+  height:6px;
+  top:130px;
+  left:0;
+  z-index:12;
+  background:#494949;
+}
+
+h3 {
   font-weight:bold;
   font-size:30px;
+  padding-bottom:100px;
 }
 
-.shelves ul {
+.backDoor ul {
   padding:10px 0;
+  max-height: 400px;
+  overflow: scroll;
 }
 
-.shelves ul li {
+.backDoor ul li {
   padding:5px 0;
 }
