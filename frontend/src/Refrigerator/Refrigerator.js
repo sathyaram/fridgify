@@ -15,7 +15,7 @@ class Refrigerator extends Component {
   }
 
   componentDidMount () {
-    axios.get('http://localhost:3001/api/categories')
+    axios.get('/api/categories')
       .then((res) => {
         console.log(res)
         this.setState({
@@ -52,23 +52,14 @@ class Refrigerator extends Component {
         <div onClick={this.openDoor} className="refrigerator">
         <div className="shelves">
           <ul>
-            {this.state.contents.map((item, i) => {
+            {/* {this.state.contents.map((item, i) => {
               return <li onClick={this.categorySelected} key={i}>{item.category}</li>
-            })}
-            <li><i className="fas fa-feather"></i>{categories}</li>
-            {/* <li><i className="fas fa-cloud-moon"></i>Dairy</li>
-            <li><i className="fas fa-apple-alt"></i>Fruit</li>
-            <li><i className="fas fa-gem"></i>Vegetables</li>
-            <li><i className="far fa-snowflake"></i>Freezer</li>
-            <li><i className="fas fa-cocktail"></i>Drinks</li>
-            <li><i className="fas fa-cookie-bite"></i>Snacks</li>
-            <li><i className="fas fa-wine-bottle"></i>Condiments</li>
-            <li><i className="fas fa-birthday-cake"></i>Grain</li>
-            <li><i className="far fa-sun"></i>Other</li> */}
+            })} */}
+            <li onClick={this.categorySelected}><i className="fas fa-feather"></i>{categories}</li>
           </ul>
         </div>
-        <Backdoor itemsToDisplay={this.state.contents.find(item => this.state.selectedCategory === item.category).items
-        }/>
+        {/* <Backdoor itemsToDisplay={this.state.contents.find(item => this.state.selectedCategory === item.category).items
+        }/> */}
           
         </div>
       </main>
