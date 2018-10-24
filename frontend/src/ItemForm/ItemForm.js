@@ -6,6 +6,7 @@ class ItemForm extends Component {
     super(props)
 
     this.state = {
+        categories: [],
         name: '',
         expiration: '',
         quantity: 1,
@@ -26,7 +27,7 @@ class ItemForm extends Component {
 
   createItem = () => {
     console.log(this.state)
-    axios.post('http://localhost:3001/api/items', this.state)
+    axios.post('/api/items', this.state)
     .then(item => {
       console.log('posted!')
     }).catch(err => {
@@ -34,7 +35,24 @@ class ItemForm extends Component {
     }) 
   }
 
+  componentDidMount () {
+    axios.get('/api/categories')
+      .then((res) => {
+        this.setState({
+          categories: res.data
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   render() {
+    const categories = this.state.categories.map((category) => {
+      return (
+        <option key={category._id} value={category.name}>{category.name}</option>
+      )
+    })
     return (
       <aside>
         <input type="text" name="name" value={this.state.name} onChange={this.handleInputChange} placeholder="Name" />
@@ -43,10 +61,7 @@ class ItemForm extends Component {
           <input type="text" name="expiration" value={this.state.expiration} onChange={this.handleInputChange} placeholder="Exp. Date" />
         </div>
         <select name="category" value={this.state.category} onChange={this.handleInputChange} placeholder="Category">
-          <option value="Meats">Meats</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Grains">Grains</option>
-          <option value="Vegetables">Vegetables</option>
+          {categories}
         </select>
         <div className="checkboxes">
           <input type="radio" name="freezer" onChange={this.handleInputChange} value={this.state.freezer} />
