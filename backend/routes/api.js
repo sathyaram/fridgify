@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Item = require('../db/models/Item')
+const Category = require('../db/models/Category')
 
 // get a list of items from the db
 router.get('/items', (req, res, next) => {
