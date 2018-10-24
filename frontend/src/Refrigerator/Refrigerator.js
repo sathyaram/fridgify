@@ -17,7 +17,6 @@ class Refrigerator extends Component {
   componentDidMount () {
     axios.get('/api/categories')
       .then((res) => {
-        console.log(res)
         this.setState({
           categories: res.data
         })
@@ -42,25 +41,21 @@ class Refrigerator extends Component {
   render() {
     const categories = this.state.categories.map((category) => {
       return (
-        <div key={category._id}>
-          <div>{category.name}</div>
-        </div>
+        <li key={category._id}><i className="fas fa-feather"></i>{category.name}</li>
       )
     })
     return (
       <main>
         <div onClick={this.openDoor} className="refrigerator">
         <div className="shelves">
-          <ul>
+          <ul onClick={this.categorySelected}>
             {/* {this.state.contents.map((item, i) => {
               return <li onClick={this.categorySelected} key={i}>{item.category}</li>
             })} */}
-            <li onClick={this.categorySelected}><i className="fas fa-feather"></i>{categories}</li>
+          {categories}
           </ul>
         </div>
-        {/* <Backdoor itemsToDisplay={this.state.contents.find(item => this.state.selectedCategory === item.category).items
-        }/> */}
-          
+        <Backdoor category={this.state.selectedCategory}/>
         </div>
       </main>
     );
