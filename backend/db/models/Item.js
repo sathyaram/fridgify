@@ -3,14 +3,9 @@ const Schema = mongoose.Schema
 
 // create items Schema & model
 const Item = new Schema({
-  name: {
-    type: String,
-    required: [true, 'Name of the item is required']
-  },
-  expiration: {
-    type: String,
-    required: [true, 'Expiration date is required']
-  },
+  category: String,
+  name: String,
+  expiration: String,
   quantity: Number,
   freezer: {
     type: Boolean,

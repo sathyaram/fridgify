@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 // set up express app
 const app = express()
@@ -20,9 +21,10 @@ app.use(function(req, res, next) {
 });
 
 app.use(bodyParser.json())
+app.use(cors())
 
 // initialize routes
-app.use('/api', require('./routes/api'))
+app.use('/', require('./routes/api'))
 
 // error handling middleware
 // app.use(function (err, req, res, next) {

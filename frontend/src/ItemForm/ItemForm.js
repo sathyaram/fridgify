@@ -50,9 +50,9 @@ class ItemForm extends Component {
         </select>
         <div className="checkboxes">
           <input type="radio" name="freezer" onChange={this.handleInputChange} value={this.state.freezer} />
-          <label for="freezer">Freezer</label>
+          <label htmlFor="freezer">Freezer</label>
           <input type="radio" name="freezer" onChange={this.handleInputChange} value={!this.state.freezer} />
-          <label for="fridge">Fridge</label>
+          <label htmlFor="fridge">Fridge</label>
         </div>
         <button type="submit" onClick={this.createItem}>Submit</button>
       </aside>

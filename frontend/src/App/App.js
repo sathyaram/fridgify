@@ -45,11 +45,11 @@ class App extends Component {
       <div>
         <header>
           <div id="additem" className="tooltip" onClick={this.openForm}>
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </div>
           <h1><a href="/">Fridgify</a></h1>
           <div id="info" className="tooltip">
-            <i class="far fa-lightbulb"></i>
+            <i className="far fa-lightbulb"></i>
           </div>
         </header>
       <ItemForm />

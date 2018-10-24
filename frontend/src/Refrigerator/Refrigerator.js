@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Backdoor from '../Backdoor/Backdoor';
 import './Refrigerator.css';
+import axios from 'axios'
 
 class Refrigerator extends Component {
   constructor(props) {
@@ -8,8 +9,21 @@ class Refrigerator extends Component {
 
     this.state = {
       contents: this.props.contents,
-      selectedCategory: this.props.contents[0].category
+      selectedCategory: this.props.contents[0].category,
+      categories: []
     }
+  }
+
+  componentDidMount () {
+    axios.get('/api/categories')
+      .then((res) => {
+        this.setState({
+          categories: res.data
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   openDoor = () => {
@@ -25,29 +39,23 @@ class Refrigerator extends Component {
   }
 
   render() {
+    const categories = this.state.categories.map((category) => {
+      return (
+        <li key={category._id}><i className="fas fa-feather"></i>{category.name}</li>
+      )
+    })
     return (
       <main>
         <div onClick={this.openDoor} className="refrigerator">
         <div className="shelves">
-          <ul>
-            {this.state.contents.map((item, i) => {
+          <ul onClick={this.categorySelected}>
+            {/* {this.state.contents.map((item, i) => {
               return <li onClick={this.categorySelected} key={i}>{item.category}</li>
-            })}
-            <li><i class="fas fa-feather"></i>Meats</li>
-            <li><i class="fas fa-cloud-moon"></i>Dairy</li>
-            <li><i class="fas fa-apple-alt"></i>Fruit</li>
-            <li><i class="fas fa-gem"></i>Vegetables</li>
-            <li><i class="far fa-snowflake"></i>Freezer</li>
-            <li><i class="fas fa-cocktail"></i>Drinks</li>
-            <li><i class="fas fa-cookie-bite"></i>Snacks</li>
-            <li><i class="fas fa-wine-bottle"></i>Condiments</li>
-            <li><i class="fas fa-birthday-cake"></i>Grain</li>
-            <li><i class="far fa-sun"></i>Other</li>
+            })} */}
+          {categories}
           </ul>
         </div>
-        <Backdoor itemsToDisplay={this.state.contents.find(item => this.state.selectedCategory === item.category).items
-        }/>
-          
+        <Backdoor category={this.state.selectedCategory}/>
         </div>
       </main>
     );
