@@ -36,25 +36,32 @@ class Backdoor extends Component {
     })  
   }
 
+
   openDoor = () => {
     var d = document.querySelector('.refrigerator');
     d.classList.add("open");
   }
 
-  render() {
-    // const categoryName = this.state.categories.map(cat => {
-    //   return cat.name
-    // })
-    // console.log(categoryName)
+  deleteItem = (e) => {
+    e.preventDefault();
+    let id = e.target.parentElement.getAttribute('id')
+    axios.delete(`/api/items/${id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
+  
 
-      const chosenCat = this.props.category
-      console.log("My category is " + chosenCat)
+  render() {
+    const chosenCat = this.props.category
+    console.log("My category is " + chosenCat)
 
     const items = this.state.items.map((item) => {
       if (item.category === chosenCat) {
         return (
           <ul key={item._id}>
-            <li>{item.name}</li>
+            <li id={item._id}>{item.name} <button onClick={this.deleteItem}>X</button></li>
           </ul>
         )
       } else {
@@ -71,7 +78,9 @@ class Backdoor extends Component {
             <a className="edit-list" href="#">Edit List</a>
           </div>
           <div>
-            <div>{items}</div>
+            <div>
+              {items}
+            </div>
           </div>
         </div>
         {/* <div className="handle"></div> */}

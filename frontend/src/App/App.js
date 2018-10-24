@@ -11,26 +11,9 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.state = [{
-      category: 'Meats',
-      items: [{    
-        name: "carrot",
-        "expiration": "Nov 17, 2018",
-        "quantity": 5,
-        "freezer": false,
-        "category": ""
-      }]
-    },
-    {
-      category: 'Dairy',
-      items: [{
-        name: "ice cream",
-        "expiration": "Dec 3, 2018",
-        "quantity": 1,
-        "freezer": true,
-        "category": ""
-      }]
-    }];
+    this.state = {
+      content: []
+    } 
   }
 
   openForm() {
@@ -53,7 +36,7 @@ class App extends Component {
           </div>
         </header>
       <ItemForm />
-      <Refrigerator contents={this.state}/>
+      <Refrigerator contents={this.state.content}/>
       </div>
     );
   }

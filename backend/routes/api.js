@@ -37,6 +37,15 @@ router.post('/api/items', (req, res, next) => {
   }).catch(next)
 })
 
+// get the item in the db
+router.get('/api/items/:id', (req, res) => {
+  Item.findById(req.params.id).then(item =>{
+    res.json(item)
+  }).catch((err) => {
+    console.log(err)
+  })
+})
+
 // update the item in the db
 router.put('/api/items/:id', (req, res, next) => {
   Item.findByIdAndUpdate({_id: req.params.id}, req.body).then(() => {
