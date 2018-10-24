@@ -10,7 +10,7 @@ class Backdoor extends Component {
         <div className="seperator"></div>
         <div className="doorText">
           <div className="upperDoor">
-            <h3><i class="fas fa-cocktail"></i>Drinks</h3>
+            <h3><i className="fas fa-cocktail"></i>Drinks</h3>
             <a className="edit-list" href="#">Edit List</a>
           </div>
           <ul>
