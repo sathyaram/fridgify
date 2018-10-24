@@ -49,6 +49,8 @@ class Backdoor extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        const item = this.state.items.filter(i => i._id !== res.data._id)
+        this.setState({items: item})
       })
   }
   
