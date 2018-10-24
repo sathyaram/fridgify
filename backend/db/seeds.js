@@ -1,4 +1,4 @@
-const mongoose = require('./models/Item')
+const mongoose = require('./models/Item.js')
 const Item = mongoose.model('Item')
 const itemData = require('./item-data.json')
 

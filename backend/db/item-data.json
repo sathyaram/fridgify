@@ -4,34 +4,34 @@
     "expiration": "Oct 10, 2019",
     "quantity": 6,
     "freezer": false,
-    "category": ""
+    "category": "Drinks"
   },
   {
     "name": "beef",
     "expiration": "Oct 30, 2018",
     "quantity": 1,
     "freezer": true,
-    "category": ""
+    "category": "Meats"
   },
   {    
     "name": "carrot",
     "expiration": "Nov 17, 2018",
     "quantity": 5,
     "freezer": false,
-    "category": ""
+    "category": "Vegetables"
   },
   {
     "name": "ice cream",
     "expiration": "Dec 3, 2018",
     "quantity": 1,
     "freezer": true,
-    "category": ""
+    "category": "Dairy"
   },
   {
     "name": "cheese",
     "expiration": "Nov 16, 2018",
     "quantity": 1,
     "freezer": false,
-    "category": ""
+    "category": "Dairy"
   }
 ]
