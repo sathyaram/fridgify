@@ -24,6 +24,7 @@ main {
 .refrigerator.open .backDoor {
   -webkit-transform: perspective(1200px) rotateY(-170deg);
   transform: perspective(1200px) rotateY(-170deg);
+  cursor: default;
 }
 
 .shelves {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Backdoor.css'
 import axios from 'axios'
 
 // need to change this to show items in this.props.ItemsToDisplays name
@@ -35,6 +36,11 @@ class Backdoor extends Component {
     })  
   }
 
+  openDoor = () => {
+    var d = document.querySelector('.refrigerator');
+    d.classList.add("open");
+  }
+
   render() {
     // const categoryName = this.state.categories.map(cat => {
     //   return cat.name
@@ -57,7 +63,7 @@ class Backdoor extends Component {
     })
 
     return (
-      <div className="backDoor">
+      <div onClick={this.openDoor} className="backDoor">
         <div className="seperator"></div>
         <div className="doorText">
           <div className="upperDoor">

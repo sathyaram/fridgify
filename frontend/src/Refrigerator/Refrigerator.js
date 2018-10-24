@@ -26,10 +26,6 @@ class Refrigerator extends Component {
       })
   }
 
-  openDoor = () => {
-    var d = document.querySelector('.refrigerator');
-    d.classList.toggle("open");
-  }
 
   categorySelected = (e) => {
     console.log(e.target.textContent);
@@ -46,7 +42,7 @@ class Refrigerator extends Component {
     })
     return (
       <main>
-        <div onClick={this.openDoor} className="refrigerator">
+        <div className="refrigerator">
         <div className="shelves">
           <ul onClick={this.categorySelected}>
             {/* {this.state.contents.map((item, i) => {
