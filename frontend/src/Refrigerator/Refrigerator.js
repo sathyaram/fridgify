@@ -8,8 +8,7 @@ class Refrigerator extends Component {
     super(props)
 
     this.state = {
-      contents: this.props.contents,
-      selectedCategory: this.props.contents[0].category,
+      selectedCategory: "",
       categories: []
     }
   }
@@ -45,9 +44,6 @@ class Refrigerator extends Component {
         <div className="refrigerator">
         <div className="shelves">
           <ul onClick={this.categorySelected}>
-            {/* {this.state.contents.map((item, i) => {
-              return <li onClick={this.categorySelected} key={i}>{item.category}</li>
-            })} */}
           {categories}
           </ul>
         </div>
