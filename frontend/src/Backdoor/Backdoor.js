@@ -1,27 +1,72 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 // need to change this to show items in this.props.ItemsToDisplays name
 
 class Backdoor extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      items: [],
+      categories: []
+    }
+  }
+
+  componentDidMount () {
+    axios.get('/api/items')
+      .then((res) => {
+        this.setState({
+          items: res.data
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    
+    axios.get('/api/categories')
+    .then((res) => {
+      this.setState({
+        categories: res.data
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })  
+  }
+
   render() {
-    console.log(this.props.itemsToDisplay);
+    // const categoryName = this.state.categories.map(cat => {
+    //   return cat.name
+    // })
+    // console.log(categoryName)
+
+      const chosenCat = this.props.category
+      console.log("My category is " + chosenCat)
+
+    const items = this.state.items.map((item) => {
+      if (item.category === chosenCat) {
+        return (
+          <ul key={item._id}>
+            <li>{item.name}</li>
+          </ul>
+        )
+      } else {
+        return null
+      }
+    })
+
     return (
       <div className="backDoor">
         <div className="seperator"></div>
         <div className="doorText">
           <div className="upperDoor">
-            <h3><i className="fas fa-cocktail"></i>Drinks</h3>
+            <h3><i className="fas fa-cocktail"></i>{chosenCat}</h3>
             <a className="edit-list" href="#">Edit List</a>
           </div>
-          <ul>
-            <li>{this.props.itemsToDisplay[0].name}</li>
-            <li>Yellowtail Red Wine [2]</li>
-            <li>Smirnoff Vodka</li>
-            <li>Milk</li>
-            <li>Orange Juice</li>
-            <li>Shocktop Lager</li>
-            <li>Almond Milk [1/2]</li>
-          </ul>
+          <div>
+            <div>{items}</div>
+          </div>
         </div>
         {/* <div className="handle"></div> */}
       </div>
