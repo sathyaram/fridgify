@@ -11,6 +11,8 @@ router.get('/items', (req, res, next) => {
 
 // add a new item to the db
 router.post('/items', (req, res, next) => {
+  console.log('adding an item');
+  console.log(req.body);
   Item.create(req.body).then(item => {
     res.send(item)
   }).catch(next)

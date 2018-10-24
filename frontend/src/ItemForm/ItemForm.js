@@ -10,7 +10,7 @@ class ItemForm extends Component {
         expiration: '',
         quantity: 1,
         freezer: false,
-        category: ''
+        category: 'Meats'
     }
   }
 
@@ -26,7 +26,7 @@ class ItemForm extends Component {
 
   createItem = () => {
     console.log(this.state)
-    axios.post('http://localhost:3001/items', this.state)
+    axios.post('http://localhost:3001/api/items', this.state)
     .then(item => {
       console.log('posted!')
     }).catch(err => {

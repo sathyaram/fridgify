@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
+import Backdoor from '../Backdoor/Backdoor';
 import './Refrigerator.css';
 
 class Refrigerator extends Component {
+  constructor(props) {
+    super(props)
 
-  openDoor() {
+    this.state = {
+      contents: this.props.contents,
+      selectedCategory: this.props.contents[0].category
+    }
+  }
+
+  openDoor = () => {
     var d = document.querySelector('.refrigerator');
     d.classList.toggle("open");
+  }
+
+  categorySelected = (e) => {
+    console.log(e.target.textContent);
+    this.setState({
+      selectedCategory: e.target.textContent
+    })
   }
 
   render() {
@@ -14,6 +30,9 @@ class Refrigerator extends Component {
         <div onClick={this.openDoor} className="refrigerator">
         <div className="shelves">
           <ul>
+            {this.state.contents.map((item, i) => {
+              return <li onClick={this.categorySelected} key={i}>{item.category}</li>
+            })}
             <li><i class="fas fa-feather"></i>Meats</li>
             <li><i class="fas fa-cloud-moon"></i>Dairy</li>
             <li><i class="fas fa-apple-alt"></i>Fruit</li>
@@ -26,25 +45,8 @@ class Refrigerator extends Component {
             <li><i class="far fa-sun"></i>Other</li>
           </ul>
         </div>
-          <div className="backDoor">
-            <div className="seperator"></div>
-            <div className="doorText">
-              <div className="upperDoor">
-                <h3><i class="fas fa-cocktail"></i>Drinks</h3>
-                <a className="edit-list" href="#">Edit List</a>
-              </div>
-              <ul>
-                <li>Yellowtail Red Wine [2]</li>
-                <li>Smirnoff Vodka</li>
-                <li>Milk</li>
-                <li>Orange Juice</li>
-                <li>Shocktop Lager</li>
-                <li>Almond Milk [1/2]</li>
-              </ul>
-            </div>
-            {/* <div className="handle"></div> */}
-          </div>
-
+        <Backdoor itemsToDisplay={this.state.contents.find(item => this.state.selectedCategory === item.category).items
+        }/>
           
         </div>
       </main>

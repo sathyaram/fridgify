@@ -5,6 +5,34 @@ import './App.css';
 
 class App extends Component {
 
+  // will need to do a comp did mount to and do an axios get to get the data for the state from the db
+  // refer to price.js from bitcoin
+  
+  constructor(props) {
+    super(props)
+
+    this.state = [{
+      category: 'Meats',
+      items: [{    
+        name: "carrot",
+        "expiration": "Nov 17, 2018",
+        "quantity": 5,
+        "freezer": false,
+        "category": ""
+      }]
+    },
+    {
+      category: 'Dairy',
+      items: [{
+        name: "ice cream",
+        "expiration": "Dec 3, 2018",
+        "quantity": 1,
+        "freezer": true,
+        "category": ""
+      }]
+    }];
+  }
+
   openForm() {
     var ai = document.querySelector('#additem');
     var aside = document.querySelector('aside');
@@ -25,7 +53,7 @@ class App extends Component {
           </div>
         </header>
       <ItemForm />
-      <Refrigerator />
+      <Refrigerator contents={this.state}/>
       </div>
     );
   }

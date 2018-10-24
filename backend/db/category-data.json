@@ -1,6 +1,7 @@
 [
   {
-    "name": "Meats"
+    "name": "Meats",
+    "class": "meats"
   },
   {
     "name": "Dairy"
