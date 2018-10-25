@@ -15,7 +15,7 @@ class Backdoor extends Component {
   }
 
   componentDidMount () {
-    axios.get('/api/items')
+    axios.get('http://localhost:3001/api/items')
       .then((res) => {
         this.setState({
           items: res.data
@@ -25,7 +25,7 @@ class Backdoor extends Component {
         console.log(err)
       })
     
-    axios.get('/api/categories')
+    axios.get('http://localhost:3001/api/categories')
     .then((res) => {
       this.setState({
         categories: res.data
@@ -36,9 +36,22 @@ class Backdoor extends Component {
     })  
   }
 
+  editList() {
+    let list = document.querySelector('.itemList');
+    list.classList.add('editable')
+    let saveButton = document.querySelector('.save-list');
+    saveButton.classList.add('appear')
+  }
+
+  saveList() {
+    let save = document.querySelector('.itemList');
+    save.classList.remove('editable')
+    let saveButton = document.querySelector('.save-list');
+    saveButton.classList.remove('appear')
+  }
 
   openDoor = () => {
-    var d = document.querySelector('.refrigerator');
+    let d = document.querySelector('.refrigerator');
     d.classList.add("open");
   }
 
@@ -62,8 +75,13 @@ class Backdoor extends Component {
     const items = this.state.items.map((item) => {
       if (item.category === chosenCat) {
         return (
-          <ul key={item._id}>
-            <li id={item._id}>{item.name} <button onClick={this.deleteItem}>X</button></li>
+          <ul className="itemList" key={item._id}>
+            <li id={item._id}>
+            <input type="text" defaultValue={item.name} />
+            <input type="text" defaultValue={item.quantity}/>
+            <input type="text" defaultValue={item.expiration}/>
+            <button onClick={this.deleteItem}>X</button>
+            </li>
           </ul>
         )
       } else {
@@ -77,12 +95,11 @@ class Backdoor extends Component {
         <div className="doorText">
           <div className="upperDoor">
             <h3><i className="fas fa-cocktail"></i>{chosenCat}</h3>
-            <a className="edit-list" href="#">Edit List</a>
+            <a onClick={this.editList} className="edit-list" href="#">Edit List</a>
+            <a onClick={this.saveList} className="save-list" href="#">Save List</a>
           </div>
           <div>
-            <div>
-              {items}
-            </div>
+            {items}
           </div>
         </div>
         {/* <div className="handle"></div> */}

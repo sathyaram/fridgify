@@ -14,8 +14,9 @@ class Refrigerator extends Component {
   }
 
   componentDidMount () {
-    axios.get('/api/categories')
+    axios.get('http://localhost:3001/api/categories')
       .then((res) => {
+        console.log("Hello!" + res.data)
         this.setState({
           categories: res.data
         })
