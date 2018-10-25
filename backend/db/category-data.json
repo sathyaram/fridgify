@@ -1,33 +1,42 @@
 [
   {
-    "name": "Meats"
+    "name" : "Meats",
+    "icon" : "https://image.flaticon.com/icons/svg/1208/1208364.svg"
   },
   {
-    "name": "Dairy"
+    "name" : "Dairy",
+    "icon" : "https://image.flaticon.com/icons/svg/457/457771.svg"
   },
   {
-    "name": "Fruit"
+    "name" : "Fruit",
+    "icon" : "https://image.flaticon.com/icons/svg/860/860573.svg"
   },
   {
-    "name": "Vegetables"
+    "name" : "Vegetables",
+    "icon" : "https://image.flaticon.com/icons/svg/493/493708.svg"
   },
   {
-    "name": "Frozen"
+    "name" : "Freezer",
+    "icon" : "https://image.flaticon.com/icons/svg/626/626679.svg"
   },
   {
-    "name": "Drinks"
+    "name" : "Drinks",
+    "icon" : "https://image.flaticon.com/icons/svg/1139/1139842.svg"
   },
   {
-    "name": "Snacks"
+    "name" : "Snacks",
+    "icon" : "https://image.flaticon.com/icons/svg/1188/1188379.svg"
   },
   {
-    "name": "Condiments"
+    "name" : "Condiments",
+    "icon" : "https://image.flaticon.com/icons/svg/229/229490.svg"
   },
   {
-    "name": "Grains"
+    "name" : "Grains",
+    "icon" : "https://image.flaticon.com/icons/svg/1139/1139849.svg"
   },
   {
-    "name": "Other"
+    "name" : "Other",
+    "icon" : "https://image.flaticon.com/icons/svg/1190/1190966.svg"
   }
 ]
-

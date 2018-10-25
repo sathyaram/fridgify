@@ -1,12 +1,17 @@
-const mongoose = require('./models/Item.js')
-const Item = mongoose.model('Item')
+const {Item, Category} = require('./models/index.js')
 const itemData = require('./item-data.json')
+const categoryData = require('./category-data.json')
 
 Item.remove({}).then(() => {
   Item.collection.insert(itemData).then((items) => {
     console.log(items)
-    process.exit()
   })
 }).catch((err) => {
   console.log(err)
 })
+
+Category.remove({}).then(() => {
+  Category.collection.insert(categoryData).then(categories => {
+    console.log(categories)
+  })
+}).catch(err => console.log(err))

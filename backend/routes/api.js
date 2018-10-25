@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Item = require('../db/models/Item')
-const Category = require('../db/models/Category')
+const { Item, Category } = require('../db/models/index')
 
 // router.get('/',(req, res) => {
 //   res.sendFile(__dirname + '../../frontend/build/index.html')

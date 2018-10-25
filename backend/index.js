@@ -1,17 +1,9 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 
 // set up express app
 const app = express()
 
-// connect to mongoDB
-if (process.env.NODE_ENV === 'production') {
-  mongoose.connect(process.env.MLAB_URL, {useNewUrlParser: true})
-} else {
-  mongoose.connect('mongodb://localhost/fridgify', {useNewUrlParser: true})
-}
-mongoose.Promise = global.Promise
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
