@@ -48,7 +48,7 @@ aside {
   padding:115px 30px 30px;
   z-index: 1;
   background:white;
-  box-shadow:2px 0 15px 0 rgba(0,0,0,0.1);
+  
   transition: all 300ms ease;
   
 }
@@ -56,12 +56,14 @@ aside {
 aside.full-item-form {
   left:0;
   transform:translateX(-300px);
+  box-shadow:2px 0 15px 0 rgba(0,0,0,0.1);
 }
 
 
 aside.tooltip-aside {
   right:0;
   transform:translateX(300px);
+  box-shadow:-2px 0 15px 0 rgba(0,0,0,0.1);
 }
 
 aside.full-item-form.open {

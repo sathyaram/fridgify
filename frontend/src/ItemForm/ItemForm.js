@@ -27,7 +27,7 @@ class ItemForm extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/categories")
+      .get("/api/categories")
       .then(res => {
         this.setState({
           categories: res.data

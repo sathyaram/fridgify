@@ -27,7 +27,7 @@ class EditItemForm extends Component {
   updateItem = itemId => {
     console.log(this.state);
     axios
-      .put("http://localhost:3001/api/items/" + this.state._id, this.state)
+      .put("/api/items/" + this.state._id, this.state)
       .then(item => {
         console.log("posted!");
       })

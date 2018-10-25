@@ -18,7 +18,7 @@ class Refrigerator extends Component {
   createItem = (itemToCreate) => {
     console.log(itemToCreate);
     axios
-      .post("http://localhost:3001/api/items", itemToCreate)
+      .post("/api/items", itemToCreate)
       .then(item => {
           console.log("posted!");
           this.getCategories();
@@ -30,14 +30,14 @@ class Refrigerator extends Component {
   };
 
   deleteItem = (item) => {
-    axios.delete(`http://localhost:3001/api/items/${item._id}`).then(res => {
+    axios.delete(`/api/items/${item._id}`).then(res => {
       this.getItems()
       });
   };
 
   getCategories = () => {
     axios
-      .get("http://localhost:3001/api/categories")
+      .get("/api/categories")
       .then(res => {
         console.log("Hello!" + res.data);
         this.setState({
@@ -51,7 +51,7 @@ class Refrigerator extends Component {
 
   getItems = () => {
     axios
-      .get("http://localhost:3001/api/items")
+      .get("/api/items")
       .then(res => {
         console.log(res.data)
         this.setState({

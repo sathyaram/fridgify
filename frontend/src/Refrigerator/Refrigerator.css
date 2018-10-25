@@ -73,6 +73,7 @@ main {
   width:50%;
   padding:25px 12px 15px;
   cursor:pointer;
+  transition: all 300ms ease;
 }
 
 .shelves ul li:hover {
