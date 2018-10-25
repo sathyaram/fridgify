@@ -6,23 +6,20 @@
   opacity: 1;
 }
 
-.freezer {
+/* .freezer {
   color:cyan;
-}
-
-
+} */
 
 .backDoor {
   cursor:pointer;
   transition: all 600ms ease;
   position:absolute;
   top:0;
-  left:4px;
+  left:0;
   z-index:4;
-  border:6px solid #494949; 
   width:100%;
   height:100%;
-  border-radius:15px;
+  border-radius: 20px 20px 7px 7px;
   background: rgb(255,255,255);
   background: linear-gradient(270deg, rgba(255,255,255,1) 10%, rgb(190, 204, 215) 100%);
  -webkit-transform: perspective(1200px) rotateY(0deg);
@@ -122,6 +119,7 @@
   width:100%;
   height:100%;
   background:#f9f9f9;
-  border-radius:12px;
+  border-radius: 20px 20px 7px 7px;
+  border:6px solid #494949; 
 }
 

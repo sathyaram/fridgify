@@ -1,12 +1,20 @@
 h1 {
   font-size:40px;
   font-weight:600;
-  display:inline-block;
-  padding-top: 5px;
+  display:flex;
+  align-items: center;
 }
 
 h1 a {
   color:#828fa2;
+  margin-top: -2px;
+}
+
+h1 img {
+  height: auto;
+  width: 38px;
+  transform: rotateY(180deg);
+  margin-right: 5px;
 }
 
 header {
@@ -123,4 +131,13 @@ aside button {
   font-size:16px;
   cursor:pointer;
   box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
+}
+
+footer {
+  background: #bdbdbd;
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }

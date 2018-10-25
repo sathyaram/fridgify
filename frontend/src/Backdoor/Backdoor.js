@@ -31,6 +31,7 @@ class Backdoor extends Component {
         if (item.freezer) {
           freezeClass = "freezer";
         }
+        console.log("bob" + item.freezer)
         return (
           <li className={freezeClass} key={i} id={item._id}>
             <EditItemForm delete={this.props.delete} itemToUpdate={item} /> 

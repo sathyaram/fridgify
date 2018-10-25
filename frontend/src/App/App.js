@@ -36,7 +36,7 @@ class App extends Component {
             <i className="fas fa-plus" />
           </div>
           <h1>
-            <a href="/">Fridgify</a>
+            <img src="images/fridge.png" /><a href="/">Fridgify</a>
           </h1>
           <div id="info" className="tooltip" onClick={this.openTooltip}>
             <i className="far fa-lightbulb" />
