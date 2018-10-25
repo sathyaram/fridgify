@@ -72,11 +72,11 @@ class ItemForm extends Component {
           />
         </div>
         <select
-          name="category"
-          value={this.state.category}
+          name="category"        
           onChange={this.handleInputChange}
           placeholder="Category"
         >
+        <option>Choose category</option>
           {categories}
         </select>
         <div className="checkboxes">

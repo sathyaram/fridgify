@@ -80,7 +80,7 @@ class Refrigerator extends Component {
     const categories = this.state.categories.map(category => {
       return (
         <li key={category._id}>
-          <i className="fas fa-feather" />
+          <img src={category.icon} />
           {category.name}
         </li>
       );

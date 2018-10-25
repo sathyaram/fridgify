@@ -67,6 +67,13 @@ main {
   height:100%;
 }
 
+.shelves ul img {
+  width: 50%;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+}
+
 .shelves ul li {
   padding:15px 20px;
   font-size:24px;
