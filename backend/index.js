@@ -31,8 +31,9 @@ app.use('/', require('./routes/api'))
 // })
 
 // listen for requests
-app.listen(process.env.port || 3001, function () {
-  console.log('Listening on port 3001')
-})
+app.set('port', process.env.PORT || 3001)
 
+app.listen(app.get('port'), () => {
+  console.log(`PORT: ${app.get('port')}`)
+})
 // Hello world
