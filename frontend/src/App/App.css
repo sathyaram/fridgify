@@ -64,6 +64,7 @@ aside.tooltip-aside {
   right:0;
   transform:translateX(300px);
   box-shadow:-2px 0 15px 0 rgba(0,0,0,0.1);
+  position:fixed;
 }
 
 aside.full-item-form.open {
@@ -80,7 +81,6 @@ aside input[type="text"] {
   width:100%;
   border:none;
   box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
-  font-family: 'Nunito';
   font-size:16px;
 }
 
@@ -100,13 +100,16 @@ aside select {
   font-size:16px;
   background:#fff;
   border:none;
-  font-family: 'Nunito';
   box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
 }
 
 aside .checkboxes {
   margin-top:30px;
   display:flex;
+}
+
+aside .checkboxes label {
+  margin:0 15px 0 5px;
 }
 
 aside #freezer {
@@ -119,6 +122,5 @@ aside button {
   border:none;
   font-size:16px;
   cursor:pointer;
-  font-family: 'Nunito';
   box-shadow:0 0 15px 0 rgba(0,0,0,0.1);
 }

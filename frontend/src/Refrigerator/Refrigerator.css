@@ -49,7 +49,7 @@ main {
   flex-direction: column;
   flex-direction:row;
   flex-wrap:wrap;
-  background: #ececec;
+  background: #f5f5f5;
   padding-bottom:67px;
   border:16px solid #e4e4e4;
   border-radius:12px;
@@ -73,6 +73,7 @@ main {
   width:50%;
   padding:10px 12px 15px;
   cursor:pointer;
+  color:#654444;
   transition: all 300ms ease;
 }
 
@@ -98,20 +99,6 @@ main {
   z-index:-1;
   bottom: 9px;
 }
-
-.handle {
-  height:100px;
-  width:12px;
-  background:#686868;
-  margin-right:30px;
-  border-radius:10px;
-}
-
-.refrigerator.open .handle {
-  display:none;
-}
-
-
 .seperator {
   width:100%;
   position:absolute;
@@ -122,13 +109,19 @@ main {
   background:#494949;
 }
 
-.upperDoor {
-  padding-bottom:80px;
+.refrigerator.open .seperator {
+  z-index:0;
 }
 
 .upperDoor h3 {
   font-weight:bold;
   font-size:30px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #bbb;
+}
+
+.upperDoor h3:empty {
+  border:none;
 }
 
 .upperDoor .edit-list {
