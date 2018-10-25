@@ -62,6 +62,7 @@ class EditItemForm extends Component {
         <button type="submit" onClick={this.updateItem}>
           ✔
         </button>
+        <button onClick={() => {this.props.delete(this.props.itemToUpdate)}}>X</button>
       </div>
     );
   }

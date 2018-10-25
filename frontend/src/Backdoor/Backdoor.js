@@ -33,8 +33,8 @@ class Backdoor extends Component {
         }
         return (
           <li className={freezeClass} key={i} id={item._id}>
-            <EditItemForm itemToUpdate={item} />
-            <button onClick={() => {this.props.delete(item)}}>X</button>
+            <EditItemForm delete={this.props.delete} itemToUpdate={item} />
+            
           </li>
         );
       } else {
