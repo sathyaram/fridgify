@@ -44,6 +44,15 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 - Freezer
 - Drinks
 - Snacks
-- Condiments
+- Condiment
 - Grains
 - Other
+
+
+### To Do
+- When 'Edit List' is clicked, List becomes unlocked
+- List items should really be inputs
+- Exp Day + Quantity should also be displayed
+- Items in database should be added 
+- Get Categories in DB or connected to items somehow
+- Add icon to be a part of category list

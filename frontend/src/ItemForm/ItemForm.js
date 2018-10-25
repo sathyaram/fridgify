@@ -27,7 +27,7 @@ class ItemForm extends Component {
 
   createItem = () => {
     console.log(this.state)
-    axios.post('/api/items', this.state)
+    axios.post('http://localhost:3001/api/items', this.state)
     .then(item => {
       console.log('posted!')
     }).catch(err => {
@@ -36,7 +36,7 @@ class ItemForm extends Component {
   }
 
   componentDidMount () {
-    axios.get('/api/categories')
+    axios.get('http://localhost:3001/api/categories')
       .then((res) => {
         this.setState({
           categories: res.data

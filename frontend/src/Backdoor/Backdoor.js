@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Backdoor.css'
+import EditItemForm from '../EditItemForm/EditItemForm'
 import axios from 'axios'
 
 // need to change this to show items in this.props.ItemsToDisplays name
@@ -36,18 +37,14 @@ class Backdoor extends Component {
     })  
   }
 
-  editList() {
+  editList = () => {
     let list = document.querySelector('.itemList');
     list.classList.add('editable')
-    let saveButton = document.querySelector('.save-list');
-    saveButton.classList.add('appear')
   }
 
-  saveList() {
+  saveList = () => {
     let save = document.querySelector('.itemList');
     save.classList.remove('editable')
-    let saveButton = document.querySelector('.save-list');
-    saveButton.classList.remove('appear')
   }
 
   openDoor = () => {
@@ -58,7 +55,7 @@ class Backdoor extends Component {
   deleteItem = (e) => {
     e.preventDefault();
     let id = e.target.parentElement.getAttribute('id')
-    axios.delete(`/api/items/${id}`)
+    axios.delete(`http://localhost:3001/api/items/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -67,7 +64,6 @@ class Backdoor extends Component {
       })
   }
   
-
   render() {
     const chosenCat = this.props.category
     console.log("My category is " + chosenCat)
@@ -77,9 +73,7 @@ class Backdoor extends Component {
         return (
           <ul className="itemList" key={item._id}>
             <li id={item._id}>
-            <input type="text" defaultValue={item.name} />
-            <input type="text" defaultValue={item.quantity}/>
-            <input type="text" defaultValue={item.expiration}/>
+            <EditItemForm itemToUpdate={item}/>
             <button onClick={this.deleteItem}>X</button>
             </li>
           </ul>
@@ -96,7 +90,6 @@ class Backdoor extends Component {
           <div className="upperDoor">
             <h3><i className="fas fa-cocktail"></i>{chosenCat}</h3>
             <a onClick={this.editList} className="edit-list" href="#">Edit List</a>
-            <a onClick={this.saveList} className="save-list" href="#">Save List</a>
           </div>
           <div>
             {items}
