@@ -79,9 +79,9 @@ class Refrigerator extends Component {
     console.log(this.state.items)
     const categories = this.state.categories.map(category => {
       return (
-        <li key={category._id}>
+        <li onClick={this.categorySelected} key={category._id}>
           <img src={category.icon} />
-          {category.name}
+          <div>{category.name}</div>
         </li>
       );
     });
@@ -90,7 +90,7 @@ class Refrigerator extends Component {
         <ItemForm createItem={this.createItem} />
         <div className="refrigerator">
           <div className="shelves">
-            <ul onClick={this.categorySelected}>{categories}</ul>
+            <ul>{categories}</ul>
           </div>
           <Backdoor category={this.state.selectedCategory} items={this.state.items} delete={this.deleteItem}/>
         </div>

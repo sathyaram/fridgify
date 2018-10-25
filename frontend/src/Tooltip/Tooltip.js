@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Tooltip extends Component {
   render() {
     return (
-      <aside class="tooltip-aside">
+      <aside className="tooltip-aside">
         <p>
           Lorum ipsum
           Lorum ipsum

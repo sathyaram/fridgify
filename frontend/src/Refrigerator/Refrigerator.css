@@ -56,28 +56,24 @@ main {
   height:100%;
 }
 
-.shelves ul img {
-  width: 50%;
+.shelves ul li img {
+  width: 35%;
   margin: 0 auto;
   height: auto;
   display: block;
+  pointer-events: none;
 }
 
 .shelves ul li {
-  padding:15px 20px;
   font-size:24px;
   text-align:center;
   position:relative;
   z-index:2;
   font-weight:600;
   width:50%;
-  padding:25px 12px 15px;
+  padding:10px 12px 15px;
   cursor:pointer;
   transition: all 300ms ease;
-}
-
-.shelves ul li:hover {
-  background:#ccc;
 }
 
 .shelves ul li:before {
@@ -102,14 +98,6 @@ main {
   z-index:-1;
   bottom: 9px;
 }
-
-.shelves ul li i {
-  display:block;
-  color:gray;
-  pointer-events: none;
-  padding-bottom:5px;
-}
-
 
 .handle {
   height:100px;
@@ -151,4 +139,44 @@ main {
   padding:10px 15px;
 }
 
+/*---Hover Effect from Hover.css---*/
 
+.shelves ul li {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.shelves ul li:hover, .shelves ul li:focus, .shelves ul li:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* Buzz */
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(4deg);
+    transform: translateX(3px) rotate(4deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-4deg);
+    transform: translateX(-3px) rotate(-4deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(4deg);
+    transform: translateX(3px) rotate(4deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-4deg);
+    transform: translateX(-3px) rotate(-4deg);
+  }
+}
