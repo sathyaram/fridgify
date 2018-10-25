@@ -5,7 +5,7 @@ class Tooltip extends Component {
   render() {
     return (
       <aside className="tooltip-aside">
-        <h2>Hello! Welcome to Fridgify!</h2>
+        <h2>Welcome to Fridgify!</h2>
         <br />
         <p>Fridgify is your virtual food tracker! It is very simple to use. Our short instruction here is ment to help you understand the app and recieve the best experience.</p>
         <br />

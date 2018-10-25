@@ -18,7 +18,7 @@ class Refrigerator extends Component {
   createItem = (itemToCreate) => {
     console.log(itemToCreate);
     axios
-      .post("/api/items", itemToCreate)
+      .post("https://fridgifydb.herokuapp.com/api/items", itemToCreate)
       .then(item => {
           console.log("posted!");
           this.getCategories();
@@ -30,14 +30,14 @@ class Refrigerator extends Component {
   };
 
   deleteItem = (item) => {
-    axios.delete(`/api/items/${item._id}`).then(res => {
+    axios.delete(`https://fridgifydb.herokuapp.com/api/items/${item._id}`).then(res => {
       this.getItems()
       });
   };
 
   getCategories = () => {
     axios
-      .get("/api/categories")
+      .get("https://fridgifydb.herokuapp.com/api/categories")
       .then(res => {
         console.log("Hello!" + res.data);
         this.setState({
@@ -51,7 +51,7 @@ class Refrigerator extends Component {
 
   getItems = () => {
     axios
-      .get("/api/items")
+      .get("https://fridgifydb.herokuapp.com/api/items")
       .then(res => {
         console.log(res.data)
         this.setState({

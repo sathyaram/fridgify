@@ -27,7 +27,7 @@ class ItemForm extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/categories")
+      .get("https://fridgifydb.herokuapp.com/api/categories")
       .then(res => {
         this.setState({
           categories: res.data

@@ -1,7 +1,7 @@
-.tooltip-aside {
-  text-align: right;
+.tooltip-aside p {
+  line-height:120%;
 }
 .tooltip-aside > h2 {
-  font-size: 24px;
-
+  font-size: 23px;
+  font-weight:bold;
 }

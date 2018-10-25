@@ -27,7 +27,7 @@ class EditItemForm extends Component {
   updateItem = itemId => {
     console.log(this.state);
     axios
-      .put("/api/items/" + this.state._id, this.state)
+      .put("https://fridgifydb.herokuapp.com/api/items/" + this.state._id, this.state)
       .then(item => {
         console.log("posted!");
       })
