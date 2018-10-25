@@ -36,7 +36,7 @@ class App extends Component {
             <i className="far fa-lightbulb" />
           </div>
         </header>
-        <ItemForm />
+        
         <Refrigerator contents={this.state.content} />
       </div>
     );

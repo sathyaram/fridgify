@@ -25,18 +25,6 @@ class ItemForm extends Component {
     });
   };
 
-  createItem = () => {
-    console.log(this.state);
-    axios
-      .post("http://localhost:3001/api/items", this.state)
-      .then(item => {
-        console.log("posted!");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
   componentDidMount() {
     axios
       .get("http://localhost:3001/api/categories")
@@ -107,7 +95,7 @@ class ItemForm extends Component {
           />
           <label htmlFor="fridge">Fridge</label>
         </div>
-        <button type="submit" onClick={this.createItem}>
+        <button type="submit" onClick={() => {this.props.createItem(this.state)}}>
           Submit
         </button>
       </aside>

@@ -76,6 +76,11 @@ main {
   font-weight:600;
   width:50%;
   padding:25px 12px 15px;
+  cursor:pointer;
+}
+
+.shelves ul li:hover {
+  background:#ccc;
 }
 
 .shelves ul li:before {
@@ -104,6 +109,7 @@ main {
 .shelves ul li i {
   display:block;
   color:gray;
+  pointer-events: none;
   padding-bottom:5px;
 }
 
