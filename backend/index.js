@@ -13,6 +13,12 @@ if (process.env.NODE_ENV === 'production') {
 }
 mongoose.Promise = global.Promise
 
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/frontend/build/index.html')
+})
+
+app.use(express.static('frontend/build'));
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
   res.header("Access-Control-Allow-Origin", "*");
@@ -36,4 +42,3 @@ app.set('port', process.env.PORT || 3001)
 app.listen(app.get('port'), () => {
   console.log(`PORT: ${app.get('port')}`)
 })
-// Hello world
