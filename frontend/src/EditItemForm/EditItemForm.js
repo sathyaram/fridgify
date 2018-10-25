@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./EditItemForm.css";
 
 class EditItemForm extends Component {
   constructor(props) {
@@ -38,13 +39,14 @@ class EditItemForm extends Component {
   render() {
     return (
       <div>
-        <input
-          type="text"
-          name="name"
-          value={this.state.name}
-          onChange={this.handleInputChange}
-          placeholder="Name"
-        />
+        <div className="row-wrap1">
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleInputChange}
+            placeholder="Name"
+          />
           <input
             type="text"
             name="quantity"
@@ -52,17 +54,28 @@ class EditItemForm extends Component {
             onChange={this.handleInputChange}
             placeholder="Quantity"
           />
-          <input
+        </div>
+        <div className="row-wrap2">
+          <div className="expdate"><label>Exp:</label><input
             type="text"
             name="expiration"
             value={this.state.expiration}
             onChange={this.handleInputChange}
             placeholder="Exp. Date"
-          />
-        <button type="submit" onClick={this.updateItem}>
-          ✔
-        </button>
-        <button onClick={() => {this.props.delete(this.props.itemToUpdate)}}>X</button>
+          /></div>
+          <div className="list-item-buttons">
+            <button id="save-button" type="submit" onClick={this.updateItem}>
+              ✔
+            </button>
+            <button id="delete-button"
+              onClick={() => {
+                this.props.delete(this.props.itemToUpdate);
+              }}
+            >
+              ✘
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
