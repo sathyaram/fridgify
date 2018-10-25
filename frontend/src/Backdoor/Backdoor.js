@@ -3,7 +3,7 @@ import "./Backdoor.css";
 import EditItemForm from "../EditItemForm/EditItemForm";
 import axios from "axios";
 
-// need to change this to show items in this.props.ItemsToDisplays name
+// AddItem wasnt connected to Backdoor, so, i moved the state up into refridgorator, 
 
 class Backdoor extends Component {
 
@@ -25,14 +25,14 @@ class Backdoor extends Component {
   render() {
     const chosenCat = this.props.category;
     console.log("My category is " + chosenCat);
-    const itemz = this.props.items.map(item => {
+    const itemz = this.props.items.map((item, i) => {
       if (item.category === chosenCat) {
         let freezeClass = "";
         if (item.freezer) {
           freezeClass = "freezer";
         }
         return (
-          <li className={freezeClass} id={item._id}>
+          <li className={freezeClass} key={i} id={item._id}>
             <EditItemForm itemToUpdate={item} />
             <button onClick={() => {this.props.delete(item)}}>X</button>
           </li>
