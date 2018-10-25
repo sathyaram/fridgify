@@ -24,7 +24,7 @@
   height:100%;
   border-radius:15px;
   background: rgb(255,255,255);
-  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(190,190,190,1) 100%);
+  background: linear-gradient(270deg, rgba(255,255,255,1) 10%, rgb(190, 204, 215) 100%);
  -webkit-transform: perspective(1200px) rotateY(0deg);
   transform: perspective(1200px) rotateY(0deg);
   -webkit-transform-origin: 0% 50%;
