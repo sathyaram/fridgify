@@ -47,7 +47,7 @@ class ItemForm extends Component {
       );
     });
     return (
-      <aside>
+      <aside className="full-item-form">
         <input
           type="text"
           name="name"

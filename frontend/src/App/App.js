@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Refrigerator from "../Refrigerator/Refrigerator";
 import ItemForm from "../ItemForm/ItemForm";
+import Tooltip from '../Tooltip/Tooltip'
 import "./App.css";
 
 class App extends Component {
@@ -15,11 +16,16 @@ class App extends Component {
     };
   }
 
-  openForm() {
-    var ai = document.querySelector("#additem");
-    var aside = document.querySelector("aside");
+  openForm = () => {
+    let ai = document.querySelector("#additem");
+    let aside = document.querySelector(".full-item-form");
     aside.classList.toggle("open");
     ai.classList.toggle("spin");
+  }
+
+  openTooltip = () => {
+    let tT = document.querySelector('.tooltip-aside');
+    tT.classList.toggle('open');
   }
 
   render() {
@@ -32,11 +38,11 @@ class App extends Component {
           <h1>
             <a href="/">Fridgify</a>
           </h1>
-          <div id="info" className="tooltip">
+          <div id="info" className="tooltip" onClick={this.openTooltip}>
             <i className="far fa-lightbulb" />
           </div>
         </header>
-        
+        <Tooltip />
         <Refrigerator contents={this.state.content} />
       </div>
     );

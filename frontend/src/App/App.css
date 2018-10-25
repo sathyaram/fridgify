@@ -45,16 +45,30 @@ aside {
   width:300px;
   position:absolute;
   top:0;
-  left:0;
   padding:115px 30px 30px;
   z-index: 1;
   background:white;
   box-shadow:2px 0 15px 0 rgba(0,0,0,0.1);
   transition: all 300ms ease;
+  
+}
+
+aside.full-item-form {
+  left:0;
   transform:translateX(-300px);
 }
 
-aside.open {
+
+aside.tooltip-aside {
+  right:0;
+  transform:translateX(300px);
+}
+
+aside.full-item-form.open {
+  transform:translateX(0);
+}
+
+aside.tooltip-aside.open {
   transform:translateX(0);
 }
 

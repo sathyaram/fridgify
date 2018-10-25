@@ -45,7 +45,6 @@ class EditItemForm extends Component {
           onChange={this.handleInputChange}
           placeholder="Name"
         />
-        <div className="two-inputs">
           <input
             type="text"
             name="quantity"
@@ -60,7 +59,6 @@ class EditItemForm extends Component {
             onChange={this.handleInputChange}
             placeholder="Exp. Date"
           />
-        </div>
         <button type="submit" onClick={this.updateItem}>
           ✔
         </button>
