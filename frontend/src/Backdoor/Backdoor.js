@@ -7,10 +7,10 @@ import axios from "axios";
 
 class Backdoor extends Component {
 
-  editList = () => {
-    let list = document.querySelector(".itemList");
-    list.classList.add("editable");
-  };
+  // editList = () => {
+  //   let list = document.querySelector(".itemList");
+  //   list.classList.add("editable");
+  // };
 
   saveList = () => {
     let save = document.querySelector(".itemList");
@@ -47,12 +47,11 @@ class Backdoor extends Component {
         <div className="doorText">
           <div className="upperDoor">
             <h3>
-              <i className="fas fa-cocktail" />
               {chosenCat}
             </h3>
-            <a onClick={this.editList} className="edit-list" href="#">
+            {/* <a onClick={this.editList} className="edit-list" href="#">
               Edit List
-            </a>
+            </a> */}
           </div>
           <ul className="itemList">{itemz}</ul>
         </div>

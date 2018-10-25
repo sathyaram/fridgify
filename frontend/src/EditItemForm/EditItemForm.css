@@ -1,5 +1,5 @@
 .list-item-buttons {
- width:50%;
+ width:30%;
  text-align:right;
  opacity:0;
  transition: all 300ms ease;
@@ -24,8 +24,12 @@
   font-size:15px;
 }
 
-.exp-date {
-  width:50%;
+.expdate {
+  width:70%;
+}
+
+.expdate label {
+  font-weight:600;
 }
 
 #save-button {
