@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Refrigerator from "../Refrigerator/Refrigerator";
-import ItemForm from "../ItemForm/ItemForm";
 import Tooltip from '../Tooltip/Tooltip'
 import "./App.css";
 
@@ -36,7 +35,7 @@ class App extends Component {
             <i className="fas fa-plus" />
           </div>
           <h1>
-            <img src="images/fridge.png" /><a href="/">Fridgify</a>
+            <img src="images/fridge.png" alt="fridgify-logo" /><a href="/">Fridgify</a>
           </h1>
           <div id="info" className="tooltip" onClick={this.openTooltip}>
             <i className="far fa-lightbulb" />

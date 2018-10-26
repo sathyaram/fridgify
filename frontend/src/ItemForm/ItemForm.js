@@ -18,8 +18,8 @@ class ItemForm extends Component {
   handleInputChange = e => {
     const target = e.target;
     const name = target.name;
-    const value = target.value;
-
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    console.log(value)
     this.setState({
       [name]: value
     });
@@ -81,19 +81,12 @@ class ItemForm extends Component {
         </select>
         <div className="checkboxes">
           <input
-            type="radio"
+            type="checkbox"
             name="freezer"
             onChange={this.handleInputChange}
             value={this.state.freezer}
           />
           <label htmlFor="freezer">Freezer</label>
-          <input
-            type="radio"
-            name="freezer"
-            onChange={this.handleInputChange}
-            value={!this.state.freezer}
-          />
-          <label htmlFor="fridge">Fridge</label>
         </div>
         <button type="submit" onClick={() => {this.props.createItem(this.state)}}>
           Submit

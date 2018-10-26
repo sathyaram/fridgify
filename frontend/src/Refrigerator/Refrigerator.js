@@ -32,6 +32,7 @@ class Refrigerator extends Component {
   deleteItem = (item) => {
     axios.delete(`https://fridgifydb.herokuapp.com/api/items/${item._id}`).then(res => {
       this.getItems()
+      
       });
   };
 
@@ -39,9 +40,9 @@ class Refrigerator extends Component {
     axios
       .get("https://fridgifydb.herokuapp.com/api/categories")
       .then(res => {
-        console.log("Hello!" + res.data);
         this.setState({
-          categories: res.data
+          categories: res.data,
+          selectedCategory: res.data[1].name
         });
       })
       .catch(err => {
@@ -53,7 +54,7 @@ class Refrigerator extends Component {
     axios
       .get("https://fridgifydb.herokuapp.com/api/items")
       .then(res => {
-        console.log(res.data)
+        
         this.setState({
           items: res.data
         });
@@ -68,20 +69,23 @@ class Refrigerator extends Component {
     this.getItems();
   }
 
-  categorySelected = e => {
-    console.log("bob" + e.target.textContent);
+  categorySelected = (e) => {
+    let thisItem = document.querySelectorAll('li.selected');
+    thisItem.forEach(function(li) {
+      li.classList.remove('selected')
+    })
+    e.target.classList.add('selected')
     this.setState({
       selectedCategory: e.target.textContent
     });
   };
 
   render() {
-    console.log(this.state.items)
     const categories = this.state.categories.map(category => {
       return (
         <li onClick={this.categorySelected} key={category._id}>
-          <img src={category.icon} />
-          <div>{category.name}</div>
+          <img alt="category-icon" src={category.icon} />
+          {category.name}
         </li>
       );
     });

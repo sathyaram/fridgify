@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Backdoor.css";
 import EditItemForm from "../EditItemForm/EditItemForm";
-import axios from "axios";
 
 // AddItem wasnt connected to Backdoor, so, i moved the state up into refridgorator, 
 
@@ -24,16 +23,14 @@ class Backdoor extends Component {
 
   render() {
     const chosenCat = this.props.category;
-    console.log("My category is " + chosenCat);
-    const itemz = this.props.items.map((item, i) => {
+    const itemz = this.props.items.map(item => {
       if (item.category === chosenCat) {
         let freezeClass = "";
         if (item.freezer) {
           freezeClass = "freezer";
         }
-        console.log("bob" + item.freezer)
         return (
-          <li className={freezeClass} key={i} id={item._id}>
+          <li className={freezeClass} key={item._id} id={item._id}>
             <EditItemForm delete={this.props.delete} itemToUpdate={item} /> 
           </li>
         );
@@ -50,9 +47,6 @@ class Backdoor extends Component {
             <h3>
               {chosenCat}
             </h3>
-            {/* <a onClick={this.editList} className="edit-list" href="#">
-              Edit List
-            </a> */}
           </div>
           <ul className="itemList">{itemz}</ul>
         </div>
