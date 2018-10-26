@@ -11,7 +11,12 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 - See groupings of what is where in your fridge
 - All content that is created/saved shows up immediately, without page refresh
 - Application is responsive and usable on mobile
-- 
+
+
+## Screenshots
+![fridgify-ss1](https://github.com/sathyaram/fridgify/blob/master/public/images/fridgify-ss1.png) "Fridgify Screenshot 1"
+![fridgify-ss2](https://github.com/sathyaram/fridgify/blob/master/public/images/fridgify-ss2.png) "Fridgify Screenshot 2"
+![fridgify-ss3](https://github.com/sathyaram/fridgify/blob/master/public/images/fridgify-ss3.png) "Fridgify Screenshot 3"
 
 ### Schemas
 
@@ -23,6 +28,7 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
   
 - Category
   - Name
+  - Icon
 
 ### Technologies
 - HTML
@@ -41,18 +47,9 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 - Dairy
 - Fruit
 - Vegetables
-- Freezer
+- Frozen
 - Drinks
 - Snacks
 - Condiment
 - Grains
 - Other
-
-
-### To Do
-X When 'Edit List' is clicked, List becomes unlocked
-X List items should really be inputs
-X Exp Day + Quantity should also be displayed
-X Items in database should be added 
-X Get Categories in DB or connected to items somehow
-- Add icon to be a part of category list

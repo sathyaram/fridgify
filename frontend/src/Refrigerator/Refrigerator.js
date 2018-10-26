@@ -15,7 +15,7 @@ class Refrigerator extends Component {
     };
   }
 
-  createItem = (itemToCreate) => {
+  createItem = itemToCreate => {
     axios
       .post("https://fridgifydb.herokuapp.com/api/items", itemToCreate)
       .then(item => {
@@ -27,7 +27,6 @@ class Refrigerator extends Component {
         console.log(err);
       });
   };
-
 
   deleteItem = item => {
     axios
@@ -42,7 +41,7 @@ class Refrigerator extends Component {
       .get("https://fridgifydb.herokuapp.com/api/categories")
       .then(res => {
         this.setState({
-          categories: res.data,
+          categories: res.data
           // selectedCategory: res.data[1].name
         });
       })
@@ -69,9 +68,9 @@ class Refrigerator extends Component {
     this.getItems();
   }
 
-  categorySelected = (e) => {
-    let doorText = document.querySelector('.doorText')
-    doorText.classList.remove('introText')
+  categorySelected = e => {
+    let doorText = document.querySelector(".doorText");
+    doorText.classList.remove("introText");
     let thisItem = document.querySelectorAll("li.selected");
     thisItem.forEach(function(li) {
       li.classList.remove("selected");
