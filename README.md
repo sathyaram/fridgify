@@ -14,9 +14,9 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 
 
 ## Screenshots
-![fridgify-ss1](https://github.com/sathyaram/fridgify/blob/master/public/images/fridgify-ss1.png) "Fridgify Screenshot 1"
-![fridgify-ss2](https://github.com/sathyaram/fridgify/blob/master/public/images/fridgify-ss2.png) "Fridgify Screenshot 2"
-![fridgify-ss3](https://github.com/sathyaram/fridgify/blob/master/public/images/fridgify-ss3.png) "Fridgify Screenshot 3"
+![fridgify-ss1](https://github.com/sathyaram/fridgify/blob/master/frontend/public/images/fridgify-ss1.png) "Fridgify Screenshot 1"
+![fridgify-ss2](https://github.com/sathyaram/fridgify/blob/master/frontend/public/images/fridgify-ss2.png) "Fridgify Screenshot 2"
+![fridgify-ss3](https://github.com/sathyaram/fridgify/blob/master/frontend/public/images/fridgify-ss3.png) "Fridgify Screenshot 3"
 
 ### Schemas
 
