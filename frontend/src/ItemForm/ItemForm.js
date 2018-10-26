@@ -11,7 +11,7 @@ class ItemForm extends Component {
       expiration: "",
       quantity: 1,
       freezer: false,
-      category: ""
+      category: "Meats"
     };
   }
 
@@ -38,15 +38,15 @@ class ItemForm extends Component {
       });
   }
 
-  clearInputs = () => {
-    this.setState({
-      name: "",
-      expiration: "",
-      quantity: 1,
-      freezer: false,
-      category: ""
-    })
-  }
+  // clearInputs = () => {
+  //   this.setState({
+  //     name: "",
+  //     expiration: "",
+  //     quantity: 1,
+  //     freezer: false,
+  //     category: ""
+  //   })
+  // }
 
   render() {
     const categories = this.state.categories.map(category => {
@@ -61,7 +61,6 @@ class ItemForm extends Component {
         <input
           type="text"
           name="name"
-          ref="form-name"
           value={this.state.name}
           onChange={this.handleInputChange}
           placeholder="Name"
@@ -70,7 +69,6 @@ class ItemForm extends Component {
           <input
             type="text"
             name="quantity"
-            ref="form-quantity"
             value={this.state.quantity}
             onChange={this.handleInputChange}
             placeholder="Quantity"
@@ -78,7 +76,6 @@ class ItemForm extends Component {
           <input
             type="text"
             name="expiration"
-            ref="form-expiration"
             value={this.state.expiration}
             onChange={this.handleInputChange}
             placeholder="Exp. Date"
@@ -86,7 +83,6 @@ class ItemForm extends Component {
         </div>
         <select
           name="category"    
-          ref="form-category"    
           onChange={this.handleInputChange}
           placeholder="Category"
         >
@@ -97,13 +93,12 @@ class ItemForm extends Component {
           <input
             type="checkbox"
             name="freezer"
-            ref="form-freezer"
             onChange={this.handleInputChange}
             value={this.state.freezer}
           />
           <label htmlFor="freezer">Freezer</label>
         </div>
-        <button type="submit" onClick={() => {this.props.createItem(this.state, this.clearInputs)}}>
+        <button type="submit" onClick={() => {this.props.createItem(this.state)}}>
           Submit
         </button>
       </aside>
