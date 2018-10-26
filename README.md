@@ -42,7 +42,6 @@ What we've like to add:
 - Express
 - Mongoose
 - React
-- React Router
 - Bodyparser
 - Node
 - Axios
