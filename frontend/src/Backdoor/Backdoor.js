@@ -2,15 +2,7 @@ import React, { Component } from "react";
 import "./Backdoor.css";
 import EditItemForm from "../EditItemForm/EditItemForm";
 
-// AddItem wasnt connected to Backdoor, so, i moved the state up into refridgorator, 
-
 class Backdoor extends Component {
-
-  // editList = () => {
-  //   let list = document.querySelector(".itemList");
-  //   list.classList.add("editable");
-  // };
-
   saveList = () => {
     let save = document.querySelector(".itemList");
     save.classList.remove("editable");
@@ -31,7 +23,7 @@ class Backdoor extends Component {
         }
         return (
           <li className={freezeClass} key={item._id} id={item._id}>
-            <EditItemForm delete={this.props.delete} itemToUpdate={item} /> 
+            <EditItemForm delete={this.props.delete} itemToUpdate={item} />
           </li>
         );
       } else {
@@ -42,11 +34,9 @@ class Backdoor extends Component {
     return (
       <div onClick={this.openDoor} className="backDoor">
         <div className="seperator" />
-        <div className="doorText">
+        <div className="doorText introText">
           <div className="upperDoor">
-            <h3>
-              {chosenCat}
-            </h3>
+            <h3>{chosenCat}</h3>
           </div>
           <ul className="itemList">{itemz}</ul>
         </div>

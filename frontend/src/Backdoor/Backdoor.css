@@ -6,10 +6,6 @@
   opacity: 1;
 }
 
-/* .freezer {
-  color:cyan;
-} */
-
 .backDoor {
   cursor:pointer;
   transition: all 600ms ease;
@@ -27,6 +23,7 @@
   -webkit-transform-origin: 0% 50%;
   transform-origin: 0% 50%;
 }
+
 
 .backDoor:after {
   content:"";
@@ -56,15 +53,34 @@
 }
 
 .backDoor ul {
+  border-top: 2px dashed #bbb;
   padding:10px 5px;
-  max-height: 400px;
-  overflow: scroll;
-  /* list-style:initial; */
+}
+
+.backDoor ul:empty {
+  border:none;
 }
 
 .backDoor ul li {
   padding:8px 0;
   font-size:20px;
+  position:relative;
+}
+
+.freezer:before {
+  content: "\f2dc";
+  color:#66e9e9;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-size: 16px;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  left: -24px;
+  top: 21px;
 }
 
 .backDoor ul li:hover .list-item-buttons {
@@ -94,6 +110,7 @@
 
 .backDoor ul li input[name="name"] {
   width:85%;
+  font-size:18px;
 }
 
 .backDoor ul li input[name="quantity"] {
@@ -121,5 +138,27 @@
   background:#f9f9f9;
   border-radius: 20px 20px 7px 7px;
   border:6px solid #494949; 
+  max-height: 600px;
+  overflow: scroll;
 }
 
+.introText:before {
+  content: "Click a category to see your list!";
+  text-align: center;
+  width: 84%;
+  position: absolute;
+  font-size: 35px;
+  left: 0;
+  top: 20%;
+  padding: 30px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+.introText:after {
+  content: url(/images/arrow.svg);
+  width: 40%;
+  position: absolute;
+  left: 32%;
+  top: 42%;
+}

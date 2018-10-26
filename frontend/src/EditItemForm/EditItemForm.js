@@ -64,14 +64,14 @@ class EditItemForm extends Component {
           /></div>
           <div className="list-item-buttons">
             <button id="save-button" type="submit" onClick={this.updateItem}>
-              ✔
+              ✔ Save
             </button>
             <button id="delete-button"
               onClick={() => {
                 this.props.delete(this.props.itemToUpdate);
               }}
             >
-              ✘
+              ✘ Delete
             </button>
           </div>
         </div>
