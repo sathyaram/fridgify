@@ -179,3 +179,9 @@ main {
     transform: translateX(-3px) rotate(-8deg);
   }
 }
+
+@media screen and (max-width:500px) {
+  .refrigerator.open {
+    left: 150%;
+  }
+}

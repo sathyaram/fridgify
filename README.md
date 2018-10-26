@@ -10,7 +10,13 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 - Create, update, or delete Items with Name,  Quantity, Exp. Date, Categories and Fridge or Freezer
 - See groupings of what is where in your fridge
 - All content that is created/saved shows up immediately, without page refresh
-- Application is responsive and usable on mobile
+- Application is usable on mobile
+
+What we've like to add:
+- Animations for multiple interactions throughout the site
+- Food authors so people can keep track of who's food
+- Authentication for multiple users
+- Adding your own categories
 
 
 ## Screenshots
@@ -19,7 +25,6 @@ This is Fridgify, your one stop spot for what's in your fridge. Have you ever be
 ![fridgify-ss3](https://github.com/sathyaram/fridgify/blob/master/frontend/public/images/fridgify-ss3.png) "Fridgify Screenshot 3"
 
 ### Schemas
-
 - Item
   - Name
   - Quantity
