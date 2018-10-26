@@ -15,19 +15,22 @@ class Refrigerator extends Component {
     };
   }
 
-  createItem = itemToCreate => {
-    console.log(itemToCreate);
+  createItem = (itemToCreate, clearInputs) => {
     axios
       .post("https://fridgifydb.herokuapp.com/api/items", itemToCreate)
       .then(item => {
         console.log("posted!");
         this.getCategories();
         this.getItems();
+        clearInputs()
       })
       .catch(err => {
         console.log(err);
       });
+     
+    
   };
+
 
   deleteItem = item => {
     axios

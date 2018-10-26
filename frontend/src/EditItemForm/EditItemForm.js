@@ -60,7 +60,7 @@ class EditItemForm extends Component {
             name="expiration"
             value={this.state.expiration}
             onChange={this.handleInputChange}
-            placeholder="Exp. Date"
+            placeholder=""
           /></div>
           <div className="list-item-buttons">
             <button id="save-button" type="submit" onClick={this.updateItem}>
