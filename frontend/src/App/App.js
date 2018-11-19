@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import Refrigerator from "../Refrigerator/Refrigerator";
 import Tooltip from '../Tooltip/Tooltip'
+import Signup from '../Signup/Signup'
+import Login from '../Login/Login'
 import "./App.css";
+import axios from "axios";
 
 class App extends Component {
   // will need to do a comp did mount to and do an axios get to get the data for the state from the db
@@ -11,8 +14,36 @@ class App extends Component {
     super(props);
 
     this.state = {
-      content: []
+      content: [],
+      signedUp: false,
+      loggedIn: false
     };
+  }
+
+  signup = (userInfo) => {
+    console.log(userInfo)
+    axios.post('http://localhost:3001/signup', userInfo)
+    .then(info => {
+      console.log(info)
+      this.setState({
+        signedUp: info.data.signedUp
+      })
+    }).catch(err => {
+      console.log(err)
+    })
+  }
+
+  login = (userInfo) => {
+    console.log(userInfo)
+    axios.post('http://localhost:3001/login', userInfo)
+    .then(info => {
+      console.log(info)
+      this.setState({
+        loggedIn: info.data.loggedIn
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   }
 
   openForm = () => {
@@ -42,6 +73,8 @@ class App extends Component {
           </div>
         </header>
         <Tooltip />
+        <Login loggedIn={this.state.loggedIn} login={this.login}/>
+        <Signup signedUp={this.state.signedUp} signup={this.signup} />
         <Refrigerator contents={this.state.content} />
       </div>
     );
